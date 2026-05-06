@@ -1,0 +1,31 @@
+Bug ID: BUG-004
+
+Bug Title: Medication stock not updated after dispensing medication
+
+Environment: Web Browser (Chrome)
+
+Precondition:
+   - Medication stock is available in the system
+
+Steps to reproduce: 
+   1. Navigate to "Walk-In Dispense" page
+   2. Select patient
+   3. Select medication to dispense
+   4. Click "Dispense" 
+
+Expected Results:
+   - Medication is dispensed successfully
+   - Medication status is updated to "Dispensed"
+   - Medication stock decreases accordingly
+   - A "Ready for Collection" email is sent to the patient
+
+Actual Results:
+   - Medication is dispensed successfully 
+   - Medication status is updated to "Dispensed"
+   - Medication stock remains unchanged
+   - A "Ready for Collection" email is sent to the patient
+
+Severity: High
+Priority: P2
+
+Evidence: To be provided
