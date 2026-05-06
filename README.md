@@ -96,6 +96,7 @@ In this project, I contributed as both a developer and a tester. As a developer,
 
 #### Test Suites
 #### AUTHENTICATION TEST SUITES 
+Standard authentication validation scenarios (e.g. empty fields, invalid formats, incorrect credentials, and account lockout) are covered under Customer Authentication and apply across all user roles.
 ##### CUSTOMER AUTHENTICATION TEST SUITES
 - Customer Registration
 - Login
@@ -127,11 +128,9 @@ In this project, I contributed as both a developer and a tester. As a developer,
 
 #### PHARMACY MANAGER TEST SUITES
 - Active Ingredients Management
-- Dosage Form Management
 - Supplier Management
 - Pharmacy Details Management
 - Employee Management
-- Reports
 
 ##### TEST CASES 
 ##### CUSTOMER AUTHENTICATION TEST CASES
@@ -282,7 +281,7 @@ User account created by pharmacy manager, login credentials sent by email
 -Expected Results: Login is successful
                  : User is redirected to Pharmacist Dashboard
 
-**PA_TC05 - Verify login fails when email is not confirmed
+**PA_TC03 - Verify login fails when email is not confirmed
 -Preconditions: Pharmacist account has been created by Pharmacy Manager
               : Email has NOT been confirmed
               : User is on login page
@@ -292,52 +291,12 @@ User account created by pharmacy manager, login credentials sent by email
                  : Error message is displayed: "Please confirm your email before logging in"
                  : User remains on the login page
 
-**PA_TC06 - Verify that login fails when incorrect password is entered
--Preconditions: Pharmacist account exists and email is confirmed
-              : User is on the login page
--Steps: 1. Enter valid email address
-        2. Enter incorrect password
-        3. Click login button
--Expected Results: Login is unsuccessful
-                 : Validation error message is displayed: "Invalid email or password"
-                 : User remains on login page
-
-**PA_TC07 - Verify login fails when invalid format email address is entered
--Preconditions: Pharmacist account exists and email is confirmed
-              : User is on the login page
--Steps: 1. Enter invalid email address (e.g. amandalingani.com)
-        2. Enter valid password
-        3. Click login button
--Expected Results: Login is unsuccessful
-                 : Validation error message is displayed: "Invalid email or password"
-                 : User remains on login page
-
-**PA_TC08 - Verify "forgot password" option is suggested after multiple failed login attempts
--Preconditions: Pharmacist account exists and email is confirmed
-              : User is on the login page
--Steps: 1. Enter valid email address
-        2. Enter incorrect password 
-        3. Click login button
-        4. Repeat failed login attempts multiple tims
-- Expected Results: Login is unsuccessful
-                  : System suggests password recovery option
-                  : Message is displayed : "Forgot your password? click here to reset"
-                  : User remains on login page
-
-**PA_TC09 – Verify password reset access behaviour (pre-first login scenario)
+**PA_TC04 – Verify password reset access behaviour (pre-first login scenario)
 -Preconditions: Pharmacist account exists and email is confirmed
               : User has not yet logged in
 -Steps: 1. Click “Forgot Password”
 -Expected Results: System responds according to defined business rule
                  : Appropriate message is displayed
-
- **PA_TC10 - Verify account is temporarily locked after multiple login attempts
-  -Preconditions: Pharmacist account exists and email is confirmed
-                : User is on the login page
-  -Steps: 1. Enter invalid login credentials until limit is reached
-  -Expected Results: Account is locked temporarily
-                   : User is prevented from logging in
-                   : Lockout message is displayed: "Account temporarily locked, try again in 60 minutes"
 
 ##### PHARMACY MANAGER AUTHENTICATION TEST CASES
 ### LOGIN
@@ -350,36 +309,7 @@ User account created by pharmacy manager, login credentials sent by email
 -Expected Results: Login is successful
                  : User is redirected to Pharmacy manager dashboard
 
-**PMA_TC02 - Verify login fails with invalid email address format
--Preconditions: Pharmacy manager account has been created
-              : User is on login page
--Steps: 1. Enter invalid email address format(e.g. amandalingani@gmail
-        2. Enter valid password
-        3. Click the login button
--Expected Results: Login is unsuccessful
-                 : Error message is displayed: "Invalid email address, please try again"
-                 : User remains on the login page
-
-**PMA_TC03 - Verify login fails with invalid password
--Preconditions: Pharmacy manager account has been created
-              : User is on login page
--Steps: 1. Enter valid email address
-        2. Enter invalid password
-        3. Click the login button
--Expected Results: Login is unsuccessful
-                 : Error message is displayed: "Invalid password, please try again"
-                 : User remains on the login page
-
-**PMA_TC04 - Verify login fails with empty email address field
--Preconditions: User is on login page
--Steps: 1. Leave email address field empty
-        2. Enter valid password
-        3. Click the login button
--Expected Results: Login is unsuccessful
-                 : Error message is displayed: "Email address cannot be empty, enter email address"
-                 : User remains on the login page
-
-**PMA_TC05 - Verify account is temporarily locked after multiple login attempts
+**PMA_TC02 - Verify account is temporarily locked after multiple login attempts
   -Preconditions: User is on the login page
   -Steps: 1. Enter invalid login credentials until limit is reached
   -Expected Results: Account is locked temporarily
@@ -503,7 +433,7 @@ User account created by pharmacy manager, login credentials sent by email
                  : File is stored and retrievable
                  : User remains on the page
 
-**PTC03 - Ensure pharmacist can add a new customer during prescrition upload
+**PTC03 - Ensure pharmacist can add a new customer during prescription upload
 -Preconditions: User is logged n
               : User is on prescription uploade page
               : Customer does not exist in the system
@@ -571,4 +501,43 @@ User account created by pharmacy manager, login credentials sent by email
 -Expected Results: System prevents dispensing
                  : Validation errors are displayed for missing fields
                  : User remains on the page
+
+##### PHARMACY MANAGER TEST CASES
+**PMTC01 - Ensure successful addition of active ingredient to the system
+-Preconditions: Pharmacy Manager is logged in
+              : Active ingredients page is opened
+-Steps: 1. Enter valid active ingredient details
+        2. Click Add
+-Expected Results: Active ingredient is added successfully to the system
+                 : Success message is displayed
+                 : Pharmacy Manager remains on page
+                 : Active ingredient is used in other parts of the system
+
+ **PMTC02 - Ensure duplicate active ingredients are prevented
+ -Preconditions: Pharmacy Manager is logged in
+               : Pharmacy Manager is on Active ingredients page
+               : Active ingredient already exists in the system
+-Steps: 1. Enter existing active ingredient identifier
+        2. Click Add
+-Expected Results: Attempt to add active ingredient fails
+                 : Error message is displayed: "Active ingredient already exists!"
+                 : Pharmacy manager remains on the page
+
+**PMTC03 - Verify successful employee(Pharmacist) registration
+-Preconditions: Pharmacy Manager is logged in
+              : Pharmacy Manager is on Employee Management page
+              : Pharmacist does not yet exist in the system
+-Steps: 1. Enter valid registration information(e.g. Fist name, Last name)
+        2. Enter valid employee email address
+        3. Click Register
+-Expected Results: Employee is successfully added to the system
+                  : A password is generated by the the system
+                  : An email with the login credentials is sent to the registered email address
+                  : Pharmacist is able to sign in with credentials
+                  : Page resets and Pharmacy Manager remains on the same page
+
+                  
+  
+  
+
 
