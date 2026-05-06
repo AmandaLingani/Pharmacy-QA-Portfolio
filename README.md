@@ -138,29 +138,38 @@ Standard authentication validation scenarios (e.g. empty fields, invalid formats
 **CA_TC01 - Verify successful registration with valid details
  - Precondition: User is on registration page
                : User is not registered
- - Steps: 1. Enter valid email address
-          2. Enter valid details in all required fields
-          3. Click register button
- - Expected Results: Registration is successful
-                  : User is redirected to customer dashboard
+ - Steps:
+    1. Enter valid email address
+    2. Enter valid details in all required fields
+    3. Click register button
+       
+ - Expected Results:
+     - Registration is successful
+     - User is redirected to customer dashboard
 
 **CA_TC02 - Verify registration fails with incorrect email format 
   - Preconditions: User is on registration page
-  - Steps: 1. Enter an invalid email format (e.g. amandalingani.com)
-          2. Enter valid details in all other required fields
-          3. Click register button
-  - Expected Results: Registration is unsuccessful
-                   : Validation error message is displayed: "Please enter a valid email address"
-                   : User remains on registration page
+  - Steps:
+       1. Enter an invalid email format (e.g. amandalingani.com)
+       2. Enter valid details in all other required fields
+       3. Click register button
+          
+  - Expected Results:
+       - Registration is unsuccessful
+       - Validation error message is displayed: "Please enter a valid email address"
+       - User remains on registration page
 
 **CA_TC03 - Verify registration fails with incorrect password format
    - Preconditions: User is on registration page
-   - Steps: 1. Enter valid email address
-            2. Enter incorrect password format (e.g. less than required length)
-            3. Click register button
-   - Expected Results: Registration is unsuccessful
-                     : Validation error message is displayed:"Password must meet required criteria"
-                     : User remains on registration page
+   - Steps:
+       1. Enter valid email address
+       2. Enter incorrect password format (e.g. less than required length)
+       3. Click register button
+          
+   - Expected Results:
+        - Registration is unsuccessful
+        - Validation error message is displayed:"Password must meet required criteria"
+        - User remains on registration page
 
 **CA_TC04 - Verify that registration fails when email already exists
   - Preconditions: User is on the registration page
@@ -174,7 +183,7 @@ Standard authentication validation scenarios (e.g. empty fields, invalid formats
 
 **CA_TC05 - Verify that registration fails when required fields are empty
   - Preconditions: User is on the registration page
-  - Steps: 1. Leave required fields empty(e.g. email address, password)
+  - Steps:1. Leave required fields empty(e.g. email address, password)
           2. Enter other fields
           3. Click register button
   - Expected Results: Registration is unsuccessful
