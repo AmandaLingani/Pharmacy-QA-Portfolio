@@ -1,0 +1,13 @@
+# Test Summary Report
+## Overview
+- This portfolio project involved testing a pharmacy management system that manages prescriptions, medications, employees, and customers. Manual functional testing was performed using structured test cases to validate core system functionality. Defects identified during testing were documented and tracked using bug reports.
+
+## Scope of Testing
+- User authentication(login/register)
+- Prescription upload
+- Employee management
+- Medication dispensing
+- Medication ordering
+
+##Test Execution Summary
+- Total Test Cases: 
