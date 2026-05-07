@@ -11,12 +11,12 @@ Steps to Reproduce:
    4. Upload a valid prescription file
       
 Expected Result: 
-- Uploaded file preview is displayed correctly
-- Pharmacist can proceed with entering prescription details 
+   - Uploaded file preview is displayed correctly
+   - Pharmacist can proceed with entering prescription details 
 
 Actual Result:
-- File preview is not displayed (blank)
-- Pharmacist is unable to complete prescription details
+   - File preview is not displayed (blank)
+   - Pharmacist is unable to complete prescription details
 
 Severity: High
 Priority: P2
