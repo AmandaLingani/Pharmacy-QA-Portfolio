@@ -13,14 +13,14 @@ Steps to Reproduce:
    6. Click "Sign up" (system auto-generates password)
           
 Expected Results:
-- Employee is successfully registered
-- System generates password 
-- An email is sent to the registered email address
-- Employee data is recorded and stored in the system
+   - Employee is successfully registered
+   - System generates password 
+   - An email is sent to the registered email address
+   - Employee data is recorded and stored in the system
   
 Actual results:
-- Employee registration fails
-- An error message is displayed: "password must contain %,*,@"
+   - Employee registration fails
+   - An error message is displayed: "password must contain %,*,@"
               
 Severity: Critical
 Priority: P1
