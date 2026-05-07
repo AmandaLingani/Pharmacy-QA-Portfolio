@@ -272,6 +272,7 @@ Standard authentication validation scenarios (e.g. empty fields, invalid formats
 ##### PHARMACIST AUTHENTICATION TEST CASES
 ### PHARMACIST REGISTRATION
 User account created by pharmacy manager, login credentials sent by email
+
 **PA_TC01 - Verify successful email confirmation
 - Preconditions: Pharmacist account has been created by Pharmacy Manager
               : User has received account activation email
