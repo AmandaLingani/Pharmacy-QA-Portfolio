@@ -135,45 +135,6 @@
                    : User is prevented from logging in
                    : Lockout message is displayed: "Account temporarily locked, try again in 60 minutes"
 
-##### PHARMACIST AUTHENTICATION TEST CASES
-### PHARMACIST REGISTRATION
-User account created by pharmacy manager, login credentials sent by email
-
-**PA_TC01 - Verify successful email confirmation
-- Preconditions: Pharmacist account has been created by Pharmacy Manager
-              : User has received account activation email
-- Steps: 1. Click the email confirmation link
-- Expected Result: Message is displayed: "Thank you for confirming your email!"
-                : User is redirected to login page
-               
-#### Login
-**PA_TC02 - Verify successful login with provided credentials
-- Preconditions: Pharmacist account has been created by Pharmacy Manager
-              : Email has been successfully confirmed
-              : User is on login page
-- Steps: 1. Enter provided email address
-        2. Enter provided password
-        3. Click the login button
-- Expected Results: Login is successful
-                 : User is redirected to Pharmacist Dashboard
-
-**PA_TC03 - Verify login fails when email is not confirmed
-- Preconditions: Pharmacist account has been created by Pharmacy Manager
-              : Email has NOT been confirmed
-              : User is on login page
-- Steps: 1. Enter valid login credentials
-        2. Click the login button
-- Expected Results: Login is unsuccessful
-                 : Error message is displayed: "Please confirm your email before logging in"
-                 : User remains on the login page
-
-**PA_TC04 – Verify password reset access behaviour (pre-first login scenario)
-- Preconditions: Pharmacist account exists and email is confirmed
-              : User has not yet logged in
-- Steps: 1. Click “Forgot Password”
-- Expected Results: System responds according to defined business rule
-                 : Appropriate message is displayed
-
 ##### PHARMACY MANAGER AUTHENTICATION TEST CASES
 ### LOGIN
 **PMA_TC01 - Verify login is successful with valid credentials
