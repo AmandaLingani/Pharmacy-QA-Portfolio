@@ -1,4 +1,4 @@
-###### Pharmacist Test Cases
+###### PHARMACIST
 **PTC01 - Check that pharmacist can process and dispense a prescription
 - Preconditions: User is logged in
               : Prescription has been uploaded by customer
