@@ -1,1 +1,95 @@
+###### Pharmacist Test Cases
+**PTC01 - Check that pharmacist can process and dispense a prescription
+- Preconditions: User is logged in
+              : Prescription has been uploaded by customer
+              : User is on prescriptions page
+- Steps: 1. Open a prescription
+        2. View prescription document
+        3. Add prescribed medication, instructions and quality
+        4. Click Dispense 
+- Expected Results: Prescription is dispensed successfully
+                 : Success confirmation message is displayed
+                 : Prescription status updates to “Dispensed”
+                 : Medication repeats decrease accordingly
+                 : An email is sent to the customer for collection
 
+**PTC02 - Ensure pharmacist can upload prescription document
+- Preconditions: User is logged in
+              : User is on prescription upload page
+- Steps: 1. Click Upload prescription
+        2. Select valid file
+        3. Click Upload
+- Expected Results: File uploads successfully
+                 : Success confirmation message is displayed
+                 : Uploaded file is visible in preview 
+                 : File is stored and retrievable
+                 : User remains on the page
+
+**PTC03 - Ensure pharmacist can add a new customer during prescription upload
+- Preconditions: User is logged n
+              : User is on prescription uploade page
+              : Customer does not exist in the system
+- Steps: 1. Attempt to search/select customer
+        2. Click Add customer
+        3. Enter valid customer details
+        4. Click Add 
+- Expected Results: Customer is created successfully
+                 : Customer appears in the system
+                 : Customer can be selected for the prescription
+                 : Prescription workflow continues without errors
+
+**PTC04 - Verify system prevents adding a duplicate customer
+- Preconditions: User is logged in
+              : User is on load prescription
+              : Customer already exists in the system
+- Steps: 1. Click Add Customer
+        2. Enter existing customer identifier (e.g. ID number)
+        3. Enter customer details
+        4. Click Add
+- Expected Results: Customer creation is prevented
+                 : Error message is displayed: "Customer already exists"
+                 : No duplicate record is created
+                 : User remains on the page
+
+**PTC05 – Ensure dispensing fails when no medication is selected
+- Preconditions: Pharmacist is logged in
+              : Prescription is opened
+- Steps: 1. Open prescription
+        2. Do not select any medication
+        3. Click Dispense
+- Expected Results: Dispensing is prevented
+                 : Validation error message is displayed
+                 : Prescription status remains unchanged
+                 : User remains on the page
+
+**PTC06 – Ensure dispensing fails when medication is out of stock
+- Preconditions: Pharmacist is logged in
+              : Prescription contains medication with insufficient stock
+- Steps: 1. Open prescription
+        2. Select medication
+        3. Click Dispense
+- Expected Results: Dispensing is unsuccessful
+                 : Error message is displayed: “Insufficient stock”
+                 : Prescription status remains unchanged
+                 : No stock is deducted
+
+**PTC07 – Ensure system prevents dispensing beyond allowed repeats
+- Preconditions: Pharmacist is logged in
+              : Prescription has no remaining repeats
+- Steps: 1. Open prescription
+        2. Attempt to dispense medication
+        3. Click Dispense
+- Expected Results: Dispensing is prevented
+                 : Error message is displayed
+                 : Repeats remain unchanged
+                 : Prescription status does not change
+
+**PTC08 – Ensure prescription cannot be processed without required fields
+- Preconditions: Pharmacist is logged in
+              : Prescription is opened
+- Steps: 1. Open prescription
+        2. Do not enter required fields (e.g. dosage, instructions)
+        3. Click Dispense
+- Expected Results: System prevents dispensing
+                 : Validation errors are displayed for missing fields
+                 : User remains on the page
