@@ -15,8 +15,8 @@ In this project, I contributed as both a developer and a tester. As a developer,
 - Mark ingredients as inactive
 
 2. Dosage Form Management
--Add dosage forms
--Delete dosage forms
+- Add dosage forms
+- Delete dosage forms
 
 3. Supplier Management
 - Add supplier
