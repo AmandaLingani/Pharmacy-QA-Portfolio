@@ -11,8 +11,8 @@
 - Medication ordering
 
 ## Test Execution Summary
-- Total Test Cases: 38
-- Passed: 33
+- Total Test Cases: 33
+- Passed: 28
 - Failed: 5
 - Blocked: 0
 
